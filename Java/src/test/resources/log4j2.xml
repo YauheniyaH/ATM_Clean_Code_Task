@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration>
+    <properties>
+        <property name="pattern">[%d{HH:mm:ss}] %-5p (%F:%L) - %m%n</property>
+    </properties>
+    <Appenders>
+        <Console name="Console">
+            <PatternLayout>
+                <Pattern>%d %p %c{2} [%t] %m%n</Pattern>
+            </PatternLayout>
+        </Console>
+        <File name="File" fileName="target/logs/automation.log">
+            <PatternLayout>
+                <Pattern>%d %p %c{2} [%t] %l %m%n</Pattern>
+            </PatternLayout>
+        </File>
+        <ReportPortalLog4j2Appender name="ReportPortalAppender">
+            <PatternLayout>
+                <Pattern>[%d{HH:mm:ss}] %-5p (%F:%L) - %m%n</Pattern>
+            </PatternLayout>
+        </ReportPortalLog4j2Appender>
+    </Appenders>
+    <Loggers>
+        <Root level="all">
+            <AppenderRef ref="Console" level="debug"/>
+            <AppenderRef ref="File" level="info"/>
+            <AppenderRef ref="ReportPortalAppender"/>
+        </Root>
+        <!--        <Logger name="com.epam.reportportal.example" level="TRACE" additivity="false">-->
+        <!--            <AppenderRef ref="ConsoleAppender"/>-->
+        <!--            <AppenderRef ref="ReportPortalAppender"/>-->
+        <!--        </Logger>-->
+        <!--        <Logger name="binary_data_logger" level="TRACE" additivity="false">-->
+        <!--            <AppenderRef ref="ReportPortalAppender"/>-->
+        <!--        </Logger>-->
+    </Loggers>
+</Configuration>
