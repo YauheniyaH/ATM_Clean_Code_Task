@@ -1,15 +1,15 @@
-package planes;
+package com.epam.atm.airport.planes;
 
 import java.util.Objects;
 
- public abstract class Plane {
+ public abstract class AbstractPlane {
 
-    String model;
-    private final int maxSpeed;
-    private final int maxFlightDistance;
-    private final int maxLoadCapacity;
+    protected String model;
+    protected final int maxSpeed;
+    protected final int maxFlightDistance;
+    protected final int maxLoadCapacity;
 
-    protected Plane(String model, int maxSpeed, int maxFlightDistance, int maxLoadCapacity) {
+    protected AbstractPlane(String model, int maxSpeed, int maxFlightDistance, int maxLoadCapacity) {
         this.model = model;
         this.maxSpeed = maxSpeed;
         this.maxFlightDistance = maxFlightDistance;
@@ -45,8 +45,8 @@ import java.util.Objects;
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Plane)) return false;
-        Plane plane = (Plane) o;
+        if (!(o instanceof AbstractPlane)) return false;
+        AbstractPlane plane = (AbstractPlane) o;
         return maxSpeed == plane.maxSpeed &&
                 maxFlightDistance == plane.maxFlightDistance &&
                 maxLoadCapacity == plane.maxLoadCapacity &&

@@ -1,10 +1,10 @@
-package planes;
+package com.epam.atm.airport.planes;
 
-import models.MilitaryType;
+import com.epam.atm.airport.planes.enums.types.MilitaryType;
 
 import java.util.Objects;
 
-public class MilitaryPlane extends Plane{
+public class MilitaryPlane extends AbstractPlane {
 
     private final MilitaryType type;
 
